@@ -1,0 +1,38 @@
+<p>trainer-edit works!</p>
+
+<div class="container mt-5">
+  <form (ngSubmit)="updateTrainer()">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" [(ngModel)]="trainer.firstName" name="firstName" class="form-control" id="firstName" placeholder="Enter your first name">
+      <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" [(ngModel)]="trainer.lastName" name="lastName" class="form-control" id="lastName" placeholder="Enter your last name">
+      <span *ngIf="errors.lastName" class="text-danger">{{errors.lastName}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="birthDate" class="form-label">birthDate</label>
+      <input type="date" [(ngModel)]="trainer.birthDate" name="birthDate" class="form-control" id="birthDate" placeholder="Enter your birth Date">
+      <span *ngIf="errors.birthDate" class="text-danger">{{errors.birthDate}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">address</label>
+      <input type="text" [(ngModel)]="trainer.address" name="address" class="form-control" id="address" placeholder="Enter your address">
+      <span *ngIf="errors.address" class="text-danger">{{errors.address}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="speciality" class="form-label">speciality</label>
+      <input type="text" [(ngModel)]="trainer.speciality" name="speciality" class="form-control" id="speciality" placeholder="Enter your speciality">
+      <span *ngIf="errors.speciality" class="text-danger">{{errors.speciality}}</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
