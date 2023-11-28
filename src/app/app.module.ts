@@ -14,6 +14,7 @@ import { TrainerListComponent } from './Pages/Trainer/trainer-list/trainer-list.
 import { HomePageComponent } from './Templates/home-page/home-page.component';
 import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.component';
 import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
+import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { StudentListComponent } from './Pages/Student/student-list/student-list.
     TrainerListComponent,
     HomePageComponent,
     TrainerEditComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,

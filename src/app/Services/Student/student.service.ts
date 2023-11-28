@@ -36,5 +36,12 @@ export class StudentService {
     return this.httpClient.get('http://localhost:8080/api/student');
   }
 
+  getOne(studentId: Number){
+    return this.httpClient.get(`http://localhost:8080/api/student/${studentId}`);
+  }
+
+  updateStudent(inputData: Object, studentId: number){
+    return this.httpClient.put(`http://localhost:8080/api/student/${studentId}`,inputData);
+  }
 
 }
