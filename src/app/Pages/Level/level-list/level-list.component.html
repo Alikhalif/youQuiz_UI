@@ -23,10 +23,9 @@
           <td>{{ level.minScore }}</td>
           <td>{{ level.description }}</td>
 
-          <a routerLink="/trainer/edit/{{level.id}}" class="btn btn-success">Edit</a>
+          <a routerLink="/level/edit/{{level.id}}" class="btn btn-success">Edit</a>
           <button type="button" (click)="deleteLevel($event, level.id)" class="btn btn-danger">delete</button>
         </tr>
-        <!-- Add more rows based on your data -->
       </tbody>
     </table>
   </div>

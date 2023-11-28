@@ -18,6 +18,7 @@ import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LevelCreateComponent } from './Pages/Level/level-create/level-create.component';
 import { LevelListComponent } from './Pages/Level/level-list/level-list.component';
+import { LevelEditComponent } from './Pages/Level/level-edit/level-edit.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LevelListComponent } from './Pages/Level/level-list/level-list.componen
     StudentListComponent,
     StudentEditComponent,
     LevelCreateComponent,
-    LevelListComponent
+    LevelListComponent,
+    LevelEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<p>level-edit works!</p>
+<p>trainer-edit works!</p>
+
+<div class="container mt-5">
+  <form (ngSubmit)="updateLevel()">
+    <div class="mb-3">
+      <label for="maxScore" class="form-label">Max Score</label>
+      <input type="number" [(ngModel)]="level.maxScore" name="maxScore" class="form-control" id="maxScore" placeholder="Enter your max Score">
+      <span *ngIf="errors.maxScore" class="text-danger">{{errors.maxScore}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="minScore" class="form-label">Min Score</label>
+      <input type="number" [(ngModel)]="level.minScore" name="minScore" class="form-control" id="minScore" placeholder="Enter your min Score">
+      <span *ngIf="errors.minScore" class="text-danger">{{errors.minScore}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" [(ngModel)]="level.description" name="description" class="form-control" id="description" placeholder="Enter your description">
+      <span *ngIf="errors.description" class="text-danger">{{errors.description}}</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
