@@ -1,0 +1,22 @@
+<p>subject-create works!</p>
+
+
+
+<div class="container mt-5">
+  <form (ngSubmit)="saveSubject()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" [(ngModel)]="title" name="title" class="form-control" id="title" placeholder="Enter title">
+      <span *ngIf="errors.title" class="text-danger">{{errors.title}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="parentId" class="form-label">Parent Subject</label>
+      <select [(ngModel)]="parentId" name="parentId" class="form-control" id="parentId" placeholder="Enter Parent Subject">
+        <option *ngFor="let sub of subjects" [value]="sub.id">{{sub.title}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
