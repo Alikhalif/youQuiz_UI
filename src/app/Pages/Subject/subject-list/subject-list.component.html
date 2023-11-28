@@ -1,0 +1,30 @@
+<p>subject-list works!</p>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Subject Information</h2>
+  <div>
+    <a routerLink="/subject" class="btn btn-primary float-end">Add Subject</a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of this.subjects; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ subject.title }}</td>
+
+          <a routerLink="/subject/edit/{{subject.id}}" class="btn btn-success">Edit</a>
+          <!-- <button type="button" (click)="deleteTrainer($event, trainer.id)" class="btn btn-danger">delete</button> -->
+        </tr>
+        <!-- Add more rows based on your data -->
+      </tbody>
+    </table>
+  </div>
+</div>
+

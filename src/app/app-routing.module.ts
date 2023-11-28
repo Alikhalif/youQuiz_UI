@@ -12,6 +12,7 @@ import { LevelCreateComponent } from './Pages/Level/level-create/level-create.co
 import { LevelListComponent } from './Pages/Level/level-list/level-list.component';
 import { LevelEditComponent } from './Pages/Level/level-edit/level-edit.component';
 import { SubjectCreateComponent } from './Pages/Subject/subject-create/subject-create.component';
+import { SubjectListComponent } from './Pages/Subject/subject-list/subject-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -33,6 +34,7 @@ const routes: Routes = [
 
   //Subject
   { path: 'subject', component: SubjectCreateComponent, title: 'Subject Create' },
+  { path: 'subject-list', component: SubjectListComponent, title: 'Subject List'},
 
 
 

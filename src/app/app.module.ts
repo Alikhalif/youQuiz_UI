@@ -20,6 +20,7 @@ import { LevelCreateComponent } from './Pages/Level/level-create/level-create.co
 import { LevelListComponent } from './Pages/Level/level-list/level-list.component';
 import { LevelEditComponent } from './Pages/Level/level-edit/level-edit.component';
 import { SubjectCreateComponent } from './Pages/Subject/subject-create/subject-create.component';
+import { SubjectListComponent } from './Pages/Subject/subject-list/subject-list.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SubjectCreateComponent } from './Pages/Subject/subject-create/subject-c
     LevelCreateComponent,
     LevelListComponent,
     LevelEditComponent,
-    SubjectCreateComponent
+    SubjectCreateComponent,
+    SubjectListComponent
   ],
   imports: [
     BrowserModule,
