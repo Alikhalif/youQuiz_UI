@@ -32,7 +32,7 @@ export class LevelService {
   }
 
   getAllLevel(){
-    return this.httpClient.get('http://localhost:8080/api/level');
+    return this.httpClient.get('http://localhost:8080/api/level/all');
   }
 
   getOne(levelId: Number){

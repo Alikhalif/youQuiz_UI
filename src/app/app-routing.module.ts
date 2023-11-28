@@ -9,6 +9,7 @@ import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.
 import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
 import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.component';
 import { LevelCreateComponent } from './Pages/Level/level-create/level-create.component';
+import { LevelListComponent } from './Pages/Level/level-list/level-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'student/edit/:id', component: StudentEditComponent, title: 'Trainer Edit' },
 
   { path: 'level', component: LevelCreateComponent, title: 'Level Create' },
-  
+  { path: 'level-list', component: LevelListComponent, title: 'Level List'},
+
 
 
 

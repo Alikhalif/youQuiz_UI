@@ -22,15 +22,15 @@ export class TrainerListComponent {
     });
   }
 
-  deleteTrainer(event:any, trainerId:Number){
-      if(confirm('Are your sure you want to delete this ?')){
-        event.target.innerText = "Deleting..."
+  // deleteTrainer(event:any, trainerId:Number){
+  //     if(confirm('Are your sure you want to delete this ?')){
+  //       event.target.innerText = "Deleting..."
 
-        this.trainerService.deleteTrainer(trainerId).subscribe((res:any) => {
-          this.getTrainerLists();
-          alert("Successfully deleted");
-        })
-      }
-  }
+  //       this.trainerService.deleteTrainer(trainerId).subscribe((res:any) => {
+  //         this.getTrainerLists();
+  //         alert("Successfully deleted");
+  //       })
+  //     }
+  // }
 
 }
