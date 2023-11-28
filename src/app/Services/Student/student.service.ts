@@ -7,7 +7,7 @@ export interface StudentResponse{
   lastName: string
   birthDate: Date
   address: string
-  speciality: string
+  dateInscription: Date
 }
 
 export interface StudentResponseType{
@@ -32,5 +32,9 @@ export class StudentService {
     return this.httpClient.post(`http://localhost:8080/api/student`,inputData);
   }
 
-  
+  getAllStudent(){
+    return this.httpClient.get('http://localhost:8080/api/student');
+  }
+
+
 }

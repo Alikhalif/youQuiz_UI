@@ -13,6 +13,7 @@ import { FooterComponent } from './Templates/footer/footer.component';
 import { TrainerListComponent } from './Pages/Trainer/trainer-list/trainer-list.component';
 import { HomePageComponent } from './Templates/home-page/home-page.component';
 import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.component';
+import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.
     FooterComponent,
     TrainerListComponent,
     HomePageComponent,
-    TrainerEditComponent
+    TrainerEditComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,

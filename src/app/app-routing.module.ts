@@ -6,6 +6,7 @@ import { StudentCreateComponent } from './Pages/Student/student-create/student-c
 import { TrainerListComponent } from './Pages/Trainer/trainer-list/trainer-list.component';
 import { HomePageComponent } from './Templates/home-page/home-page.component';
 import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.component';
+import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -15,6 +16,7 @@ const routes: Routes = [
 
 
   { path: 'student', component: StudentCreateComponent, title: 'Student Create' },
+  { path: 'student-list', component: StudentListComponent, title: 'Student List'},
 
 ];
 
