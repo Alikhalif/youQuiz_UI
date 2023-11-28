@@ -22,14 +22,14 @@ export class LevelListComponent {
     });
   }
 
-  // deleteLevel(event:any, levelId:Number){
-  //   if(confirm('Are your sure you want to delete this ?')){
-  //     event.target.innerText = "Deleting..."
+  deleteLevel(event:any, levelId:Number){
+    if(confirm('Are your sure you want to delete this ?')){
+      event.target.innerText = "Deleting..."
 
-  //     this.levelService.deleteLevel(levelId).subscribe((res:any) => {
-  //       this.getLevelLists();
-  //       alert("Successfully deleted");
-  //     })
-  //   }
-  // }
+      this.levelService.deleteLevel(levelId).subscribe((res:any) => {
+        this.getLevelLists();
+        alert("Successfully deleted");
+      })
+    }
+  }
 }
