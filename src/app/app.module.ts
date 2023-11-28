@@ -15,6 +15,8 @@ import { HomePageComponent } from './Templates/home-page/home-page.component';
 import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.component';
 import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
 import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LevelCreateComponent } from './Pages/Level/level-create/level-create.component';
 
 
 @NgModule({
@@ -29,13 +31,15 @@ import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.
     HomePageComponent,
     TrainerEditComponent,
     StudentListComponent,
-    StudentEditComponent
+    StudentEditComponent,
+    LevelCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

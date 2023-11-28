@@ -8,6 +8,7 @@ import { HomePageComponent } from './Templates/home-page/home-page.component';
 import { TrainerEditComponent } from './Pages/Trainer/trainer-edit/trainer-edit.component';
 import { StudentListComponent } from './Pages/Student/student-list/student-list.component';
 import { StudentEditComponent } from './Pages/Student/student-edit/student-edit.component';
+import { LevelCreateComponent } from './Pages/Level/level-create/level-create.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -19,6 +20,10 @@ const routes: Routes = [
   { path: 'student', component: StudentCreateComponent, title: 'Student Create' },
   { path: 'student-list', component: StudentListComponent, title: 'Student List'},
   { path: 'student/edit/:id', component: StudentEditComponent, title: 'Trainer Edit' },
+
+  { path: 'level', component: LevelCreateComponent, title: 'Level Create' },
+  
+
 
 
 ];
