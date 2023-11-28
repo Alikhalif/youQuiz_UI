@@ -27,9 +27,8 @@
           <td>{{ student.dateInscription | date:'yyyy-MM-dd' }}</td>
 
           <a routerLink="/student/edit/{{student.id}}" class="btn btn-success">Edit</a>
-          <button type="button"  class="btn btn-danger">delete</button>
+          <button type="button" (click)="deleteStudent($event, student.id)"  class="btn btn-danger">delete</button>
         </tr>
-        <!-- Add more rows based on your data -->
       </tbody>
     </table>
   </div>

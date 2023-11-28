@@ -44,4 +44,8 @@ export class StudentService {
     return this.httpClient.put(`http://localhost:8080/api/student/${studentId}`,inputData);
   }
 
+  deleteStudent(studentId:Number){
+    return this.httpClient.delete(`http://localhost:8080/api/student/${studentId}`);
+  }
+
 }
