@@ -20,9 +20,8 @@
           <td>{{ subject.title }}</td>
 
           <a routerLink="/subject/edit/{{subject.id}}" class="btn btn-success">Edit</a>
-          <!-- <button type="button" (click)="deleteTrainer($event, trainer.id)" class="btn btn-danger">delete</button> -->
+          <button type="button" (click)="deleteSubject($event, subject.id)" class="btn btn-danger">delete</button>
         </tr>
-        <!-- Add more rows based on your data -->
       </tbody>
     </table>
   </div>

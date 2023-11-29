@@ -31,6 +31,6 @@ export class StudentListComponent {
         alert("Successfully deleted");
       })
     }
-}
+  }
 
 }

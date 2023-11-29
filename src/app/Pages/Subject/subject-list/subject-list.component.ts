@@ -23,4 +23,14 @@ export class SubjectListComponent {
     });
   }
 
+  deleteSubject(event:any, subjectId:Number){
+    if(confirm('Are your sure you want to delete this ?')){
+      event.target.innerText = "Deleting..."
+
+      this.subjectService.deleteSubject(subjectId).subscribe((res:any) => {
+        this.getSubjectLists();
+        alert("Successfully deleted");
+      })
+    }
+  }
 }

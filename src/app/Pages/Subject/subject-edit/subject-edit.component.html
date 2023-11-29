@@ -1,0 +1,24 @@
+<p>subject-edit works!</p>
+
+
+<div class="container mt-5">
+  <form (ngSubmit)="updateSubject()">
+
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" [(ngModel)]="subject.title" name="firstName" class="form-control" id="firstName" placeholder="Enter your first name">
+      <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="parentId" class="form-label">Parent Subject</label>
+      <select [(ngModel)]="subject.parentId" name="parentId" class="form-control" id="parentId" placeholder="Enter Parent Subject">
+        <option *ngFor="let sub of subjects" [value]="sub.id">{{sub.title}}</option>
+      </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+

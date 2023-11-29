@@ -21,6 +21,7 @@ import { LevelListComponent } from './Pages/Level/level-list/level-list.componen
 import { LevelEditComponent } from './Pages/Level/level-edit/level-edit.component';
 import { SubjectCreateComponent } from './Pages/Subject/subject-create/subject-create.component';
 import { SubjectListComponent } from './Pages/Subject/subject-list/subject-list.component';
+import { SubjectEditComponent } from './Pages/Subject/subject-edit/subject-edit.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { SubjectListComponent } from './Pages/Subject/subject-list/subject-list.
     LevelListComponent,
     LevelEditComponent,
     SubjectCreateComponent,
-    SubjectListComponent
+    SubjectListComponent,
+    SubjectEditComponent
   ],
   imports: [
     BrowserModule,
