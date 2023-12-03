@@ -1,24 +1,81 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/">Quiz Platform</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/quizzes">Quizzes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
-        </li>
-        <!-- Add more navigation links as needed -->
-      </ul>
-    </div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Tivotal</title>
 
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!--css file-->
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+  </head>
+  <body>
+    <section class="sidebar">
+      <a routerLink="/" class="logo m-auto">
+        <span class="text m-auto">YouQuiz</span>
+      </a>
+
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#" class="nav-link">
+            <i class="fas fa-border-all"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/subject-list" class="nav-link">
+            <i class="fa-solid fa-book"></i>
+            <span class="text">Subject</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/level-list" class="nav-link">
+            <i class="fas fa-chart-simple"></i>
+            <span class="text">Level</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/validation" class="nav-link">
+            <i class="fas fa-message"></i>
+            <span class="text">Question & Answar</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/student-list" class="nav-link">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/trainer-list" class="nav-link">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <span class="text">Trainer</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="side-menu">
+        <li>
+          <a routerLink="#" class="logout">
+            <i class="fas fa-right-from-bracket"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content">
+
+
+      <ng-content></ng-content>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

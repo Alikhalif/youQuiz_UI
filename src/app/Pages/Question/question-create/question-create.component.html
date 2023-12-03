@@ -1,0 +1,75 @@
+<app-header>
+
+<!-- Button trigger modal -->
+
+<div class="pt-2 m-auto">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Question
+  </button>
+
+  <h2>{{questionTextResponse}}</h2>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- <form (ngSubmit)="saveQuestionToLocal()"> -->
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+
+              <div class="mb-3">
+                <label for="questionText" class="form-label">Question</label>
+                <textarea id="questionText" class="form-control" rows="3" [(ngModel)]="myQuestion.questionText" name="questionText" required></textarea>
+                <span *ngIf="errors.questionText" class="text-danger">{{errors.questionText}}</span>
+              </div>
+
+              <select [(ngModel)]="myQuestion.type" name="" class="form-control" id="type">
+                <option selected>--Multiple Choice--</option>
+                <option>SINGLE</option>
+                <option>MULTIPLE</option>
+                <option>DIRECT</option>
+              </select>
+
+              <div class="mb-3">
+                <label for="totalScore" class="form-label">Total Score</label>
+                <input type="text" [(ngModel)]="myQuestion.totalScore" name="totalScore" class="form-control" id="totalScore" placeholder="Enter Total Score">
+                <span *ngIf="errors.totalScore" class="text-danger">{{errors.totalScore}}</span>
+              </div>
+
+              <div class="mb-3">
+                <label for="subjectId" class="form-label">Subject</label>
+                <select [(ngModel)]="myQuestion.subjectId" name="subjectId" class="form-control" id="subjectId" placeholder="Enter Subject">
+                  <option *ngFor="let sub of subjects" [value]="sub.id">{{sub.title}}</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="levelId" class="form-label">Level</label>
+                <select [(ngModel)]="myQuestion.levelId" name="levelId" class="form-control" id="levelId" placeholder="Enter Level">
+                  <option *ngFor="let lev of levels" [value]="lev.id">{{lev.description}}</option>
+                </select>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="saveQuestionToLocal()" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          </div>
+
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+</app-header>

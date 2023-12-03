@@ -14,6 +14,9 @@ import { LevelEditComponent } from './Pages/Level/level-edit/level-edit.componen
 import { SubjectCreateComponent } from './Pages/Subject/subject-create/subject-create.component';
 import { SubjectListComponent } from './Pages/Subject/subject-list/subject-list.component';
 import { SubjectEditComponent } from './Pages/Subject/subject-edit/subject-edit.component';
+import { QuestionCreateComponent } from './Pages/Question/question-create/question-create.component';
+import { ValidationComponent } from './Pages/Question/validation/validation.component';
+import { TestComponent } from './Pages/Test/test/test.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -38,6 +41,11 @@ const routes: Routes = [
   { path: 'subject-list', component: SubjectListComponent, title: 'Subject List'},
   { path: 'subject/edit/:id', component: SubjectEditComponent, title: 'Subject Edit' },
 
+  { path: 'question', component: QuestionCreateComponent, title: 'Question Create' },
+  { path: 'validation', component: ValidationComponent, title: 'Validation' },
+
+
+  { path: 'test', component: TestComponent, title: 'Test Create' },
 
 
 
