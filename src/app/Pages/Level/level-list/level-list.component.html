@@ -1,34 +1,42 @@
 <app-header>
 
 <div class="container mt-5">
-  <h2 class="text-center mb-4">Trainer Information</h2>
+  <h2 class="text-center mb-4">Level Information</h2>
   <div>
-    <a routerLink="/trainer" class="btn btn-primary float-end">Add Trainer</a>
+    <div>
+      <a routerLink="/level" class="btn btn-primary float-end">Add Level</a>
+    </div>
+
+    <div class="">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Max Score</th>
+            <th scope="col">Min Score</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let level of this.levels; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ level.maxScore }}</td>
+            <td>{{ level.minScore }}</td>
+            <td>{{ level.description }}</td>
+            <td class="m-1">
+              <a routerLink="/level/edit/{{level.id}}" class="btn btn-success m-1">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
+              <button type="button" (click)="deleteLevel($event, level.id)" class="btn btn-danger m-1">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="table-responsive">
-    <table class="table table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Max Score</th>
-          <th scope="col">Min Score</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let level of this.levels; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ level.maxScore }}</td>
-          <td>{{ level.minScore }}</td>
-          <td>{{ level.description }}</td>
-
-          <a routerLink="/level/edit/{{level.id}}" class="btn btn-success">Edit</a>
-          <button type="button" (click)="deleteLevel($event, level.id)" class="btn btn-danger">delete</button>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
 
 </app-header>

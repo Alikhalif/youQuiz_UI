@@ -4,29 +4,56 @@
 
   <app-question-create></app-question-create>
 
-  <form [formGroup]="answarForm">
-    <div formArrayName="answarList" class="container mt-5">
+  <!-- Media -->
+  <div class="border m-2 p-2">
+    <h1 class="text-center mb-3">Media</h1>
 
-      <button type="button" (click)="addAnswar()" class="btn btn-sm btn-warning ">Add</button>
+    <div class="mx-4">
+      <input type="text" [(ngModel)]="myMedia.url"  class="form-control m-auto" placeholder="Enter URL for media">
+    </div>
+    <div class="mx-4">
+      <select [(ngModel)]="myMedia.mediaType" class="form-control" id="">
+        <option value="VIDEO">VIDEO</option>
+        <option value="IMAGE">IMAGE</option>
+        <option value="SOUND">SOUND</option>
+        <option value="DOCUMENT">DOCUMENT</option>
+      </select>
+    </div>
 
-      <div *ngFor="let answar of answarListArray().controls; let i = index;">
+  </div>
+
+  <div class="border m-2 p-2 bg-whit">
+    <form [formGroup]="answarForm">
+      <div formArrayName="answarList" class="container mt-5">
+
+        <div class="mx-3">
+          <button type="button" (click)="addAnswar()" class="btn btn-sm btn-warning ">Add</button>
+        </div>
+
+        <div *ngFor="let answar of answarListArray().controls; let i = index;">
 
 
-        <div [formGroupName]="i" class="d-flex m-2 form-group">
-          <input id="answareText" type="text" formControlName="answareText" class="form-control m-2"  name="answareText" placeholder="Enter answar" required>
-          <input id="points" type="number" formControlName="points" class="form-control m-2"  name="points" placeholder="Enter point" required>
-          <input id="checkAnswar" type="checkbox" formControlName="checkAnswar" class="m-2"  name="checkAnswar" required> Correct Answer
+          <div [formGroupName]="i" class="d-flex m-2 form-group">
+            <input id="answareText" type="text" formControlName="answareText" class="form-control m-2"  name="answareText" placeholder="Enter answar" required>
+            <input id="points" type="number" formControlName="points" class="form-control m-2"  name="points" placeholder="Enter point" required>
+            <input id="checkAnswar" type="checkbox" formControlName="checkAnswar" class="m-2"  name="checkAnswar" required> Correct Answer
 
-          <button type="button" (click)="removeAnswar(i)" class="btn btn-sm btn-danger ms-1">Remove</button>
+            <button type="button" (click)="removeAnswar(i)" class="btn btn-sm btn-danger m-2">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="mx-3">
+          <button type="button" (click)="getFormData()" class="btn btn-primary btn-block">Save</button>
         </div>
 
       </div>
 
-      <button type="submit" (click)="getFormData()" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 
-    </div>
-
-  </form>
 
 
 </div>

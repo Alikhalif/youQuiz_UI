@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 import { Answar } from 'src/app/Model/answar';
 import { Question } from 'src/app/Model/question';
+import { Media } from 'src/app/Model/media';
+
 import { AnswarService } from 'src/app/Services/Answar/answar.service';
+import { MediaService } from 'src/app/Services/Media/media.service';
 import { QuestionService } from 'src/app/Services/Question/question.service';
 import { LocalStorageService } from 'src/app/Services/local/local-storage.service';
 // import { Answar } from 'src/app/Model/answar/answar';
@@ -20,7 +23,12 @@ export class ValidationComponent {
   constructor(private localStorageService: LocalStorageService,
               private questionService: QuestionService,
               private answarService: AnswarService,
+              private mediaService:MediaService,
               ){}
+
+
+  // mediaUrl: string ='';
+  // mediaType: string = '';
 
   myAnswar: Answar = {
     answareText: '',
@@ -40,6 +48,12 @@ export class ValidationComponent {
   }
 
   question: Question[] = []
+
+  myMedia: Media = {
+    url: '',
+    mediaType: '',
+    question_id: 0
+  }
 
   answarForm: FormGroup = new FormGroup({
     answarList: new FormArray([this.getAnswarFields()])
@@ -82,6 +96,24 @@ export class ValidationComponent {
           next: (res: any) => {
               console.log(res.New_Question.id, 'response');
 
+              //media
+              if (this.myMedia.url != '' || this.myMedia.mediaType != '') {
+                let data = {
+                  url: this.myMedia.url,
+                  mediaType: this.myMedia.mediaType,
+                  question_id: res.New_Question.id
+                }
+                this.mediaService.saveMedia(data).subscribe({
+                  next: (res: any) => {
+                    console.log(res);
+                  },
+                  error: (err: any) => {
+                    console.log(err);
+                  }
+
+                })
+              }
+
               //add answars
               for (let i = 0; i < answarListArray.controls.length; i++) {
                 let data = {
@@ -103,9 +135,11 @@ export class ValidationComponent {
 
                   }
                 })
-
               }
+
+
           },
+
 
           error: (err: any) => {
             console.log(err.error.errors, 'errors');

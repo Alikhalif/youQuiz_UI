@@ -48,7 +48,7 @@ body.dark {
   position: fixed;
   top: 0;
   left: 0;
-  background: #3c91e6;
+  background: #f9f9f9;
   height: 100%;
   width: 280px;
   z-index: 2000;
@@ -169,7 +169,8 @@ body.dark {
 .content {
   position: relative;
   width: calc(100% - 280px);
-  left: 280px;
+  left: 220px;
+  height: 100vh;
   transition: 0.3s ease;
 }
 

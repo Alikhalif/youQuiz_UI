@@ -1,39 +1,48 @@
 <app-header>
 
-<div class="w-50 mt-5">
+<div class="mt-5">
   <h2 class="text-center mb-4">Trainer Information</h2>
-  <div>
-    <a routerLink="/trainer" class="btn btn-primary float-end">Add Trainer</a>
+  <div class="p-2">
+    <div class="p-2">
+      <a routerLink="/trainer" class="btn btn-primary float-end">Add Trainer</a>
+    </div>
+
+    <div class="p-2">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Address</th>
+            <th scope="col">Speciality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trainer of this.trainers; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ trainer.firstName }}</td>
+            <td>{{ trainer.lastName }}</td>
+            <td>{{ trainer.birthDate | date:'yyyy-MM-dd' }}</td>
+            <td>{{ trainer.address }}</td>
+            <td>{{ trainer.speciality }}</td>
+
+            <td>
+              <a routerLink="/trainer/edit/{{trainer.id}}" class="btn btn-success m-1">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
+              <button type="button" (click)="deleteTrainer($event, trainer.id)" class="btn btn-danger m-1">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- Add more rows based on your data -->
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="table-responsive">
-    <table class="table table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Birth Date</th>
-          <th scope="col">Address</th>
-          <th scope="col">Speciality</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let trainer of this.trainers; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ trainer.firstName }}</td>
-          <td>{{ trainer.lastName }}</td>
-          <td>{{ trainer.birthDate | date:'yyyy-MM-dd' }}</td>
-          <td>{{ trainer.address }}</td>
-          <td>{{ trainer.speciality }}</td>
-
-          <a routerLink="/trainer/edit/{{trainer.id}}" class="btn btn-success">Edit</a>
-          <button type="button" (click)="deleteTrainer($event, trainer.id)" class="btn btn-danger">delete</button>
-        </tr>
-        <!-- Add more rows based on your data -->
-      </tbody>
-    </table>
-  </div>
 </div>
 
 </app-header>

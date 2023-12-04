@@ -1,13 +1,16 @@
-<app-header>
+<!-- <app-header> -->
 
 <!-- Button trigger modal -->
 
-<div class="pt-2 m-auto">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add Question
-  </button>
+<div class="pt-2 border m-2 p-2">
+  <div class="d-flex flex-row mx-4">
+    <button type="button" class="btn btn-primary m-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Question
+    </button>
 
-  <h2>{{questionTextResponse}}</h2>
+    <p class="mt-3">{{questionTextResponse | uppercase}}</p>
+  </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,4 +75,4 @@
 
 
 
-</app-header>
+<!-- </app-header> -->

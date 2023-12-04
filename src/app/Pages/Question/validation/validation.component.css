@@ -1,0 +1,7 @@
+.content {
+  position: relative;
+  width: calc(100% - 280px);
+  left: 220px;
+  /* height: 100vh; */
+  transition: 0.3s ease;
+}

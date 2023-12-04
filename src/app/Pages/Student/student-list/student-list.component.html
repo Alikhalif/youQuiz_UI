@@ -1,13 +1,12 @@
 <app-header>
 
-<p>student-list works!</p>
 <div class="container mt-5">
   <h2 class="text-center mb-4">Trainer Information</h2>
   <div>
     <a routerLink="/student" class="btn btn-primary float-end">Add Student</a>
   </div>
 
-  <div class="table-responsive">
+  <div class="">
     <table class="table table-bordered table-hover">
       <thead class="thead-dark">
         <tr>
@@ -28,9 +27,15 @@
           <td>{{ student.address }}</td>
           <td>{{ student.dateInscription | date:'yyyy-MM-dd' }}</td>
 
-          <a routerLink="/student/edit/{{student.id}}" class="btn btn-success">Edit</a>
-          <button type="button" (click)="deleteStudent($event, student.id)"  class="btn btn-danger">delete</button>
-        </tr>
+          <td>
+            <a routerLink="/student/edit/{{student.id}}" class="btn btn-success m-1">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+            <button type="button" (click)="deleteStudent($event, student.id)"  class="btn btn-danger m-1">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </td>
+          </tr>
       </tbody>
     </table>
   </div>
