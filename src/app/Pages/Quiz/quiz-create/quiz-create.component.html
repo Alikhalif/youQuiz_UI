@@ -1,0 +1,63 @@
+<app-header>
+  <div class="p-4">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="my-5">
+        <h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Quiz</h1>
+      </div>
+
+      <div class="my-5">
+        <a class="arrow-wrapper text-3xl font-bold leading-tight text-gray-900 dark:text-white" routerLink="">list</a>
+      </div>
+    </div>
+
+
+    <form class="row g-3" (submit)="saveQuizzes()">
+      <div class="col-md-6">
+        <label for="validationDefault01" class="form-label">Score</label>
+        <input type="number" [(ngModel)]="myQuiz.score" name="score" class="form-control" placeholder="Enter Score" id="validationDefault01" required>
+      </div>
+      <div class="col-md-6">
+        <label for="validationDefault02" class="form-label">chance Number</label>
+        <input type="number" [(ngModel)]="myQuiz.chanceNum" name="chanceNum" class="form-control" placeholder="Enter Chance Number" id="validationDefault02" required>
+      </div>
+
+
+      <div class="col-md-12">
+        <label for="validationDefault04" class="form-label">Trainer</label>
+        <select [(ngModel)]="myQuiz.trainerId" name="trainerId" class="form-select" id="validationDefault04" required>
+          <option selected disabled value="">Choose...</option>
+          <option *ngFor="let trn of trainers" [value]="trn.id">{{trn.firstName}}</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <label for="validationDefault05" class="form-label">Remark</label>
+        <textarea [(ngModel)]="myQuiz.remark" name="remark" id="" cols="20" rows="5" placeholder="Enter Remark" class="form-control" ></textarea>
+      </div>
+      <div class="col-6">
+        <div class="form-check">
+          <label class="checkbox-container">
+            <input [(ngModel)]="myQuiz.showAnswers" name="showAnswers" class="custom-checkbox" type="checkbox">
+            <span class="checkmark"></span>
+            show Answers
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label class="checkbox-container">
+          <input [(ngModel)]="myQuiz.showFinalResults" name="showFinalResults" class="custom-checkbox" type="checkbox">
+          <span class="checkmark"></span>
+          show Final Results
+        </label>
+      </div>
+      <div class="col-12">
+        <button class="submit" type="submit">Save</button>
+      </div>
+
+      {{myQuiz.remark}}
+    </form>
+  </div>
+
+
+
+</app-header>
+

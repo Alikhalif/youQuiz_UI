@@ -8,11 +8,12 @@
   <div class="border m-2 p-2">
     <h1 class="text-center mb-3">Media</h1>
 
-    <div class="mx-4">
+    <div class="mx-4 pb-2">
       <input type="text" [(ngModel)]="myMedia.url"  class="form-control m-auto" placeholder="Enter URL for media">
     </div>
     <div class="mx-4">
       <select [(ngModel)]="myMedia.mediaType" class="form-control" id="">
+        <option selected disabled value="">Choose...</option>
         <option value="VIDEO">VIDEO</option>
         <option value="IMAGE">IMAGE</option>
         <option value="SOUND">SOUND</option>

@@ -17,6 +17,7 @@ import { SubjectEditComponent } from './Pages/Subject/subject-edit/subject-edit.
 import { QuestionCreateComponent } from './Pages/Question/question-create/question-create.component';
 import { ValidationComponent } from './Pages/Question/validation/validation.component';
 import { TestComponent } from './Pages/Test/test/test.component';
+import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -46,6 +47,8 @@ const routes: Routes = [
 
 
   { path: 'test', component: TestComponent, title: 'Test Create' },
+
+  { path: 'quiz', component: QuizCreateComponent, title: 'Quiz Create'}
 
 
 

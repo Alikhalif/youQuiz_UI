@@ -25,6 +25,7 @@ import { SubjectEditComponent } from './Pages/Subject/subject-edit/subject-edit.
 import { QuestionCreateComponent } from './Pages/Question/question-create/question-create.component';
 import { ValidationComponent } from './Pages/Question/validation/validation.component';
 import { TestComponent } from './Pages/Test/test/test.component';
+import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { TestComponent } from './Pages/Test/test/test.component';
     QuestionCreateComponent,
     ValidationComponent,
     TestComponent,
+    QuizCreateComponent,
   ],
   imports: [
     BrowserModule,
