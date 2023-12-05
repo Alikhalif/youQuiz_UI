@@ -79,62 +79,68 @@
 
 /* button */
 
-button {
-  --primary-color: #645bff;
-  --secondary-color: #fff;
-  --hover-color: #111;
-  --arrow-width: 10px;
-  --arrow-stroke: 2px;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 20px;
-  color: var(--secondary-color);
-  padding: 1em 1.8em;
-  background: var(--primary-color);
-  display: flex;
-  transition: 0.2s background;
-  align-items: center;
-  gap: 0.6em;
-  font-weight: bold;
-}
-
-button .arrow-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button .arrow {
-  margin-top: 1px;
-  width: var(--arrow-width);
-  background: var(--primary-color);
-  height: var(--arrow-stroke);
+.button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  --primary-color: #111;
+  --hovered-color: #2196F3;
   position: relative;
-  transition: 0.2s;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
 }
 
-button .arrow::before {
-  content: "";
-  box-sizing: border-box;
+.button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color)
+}
+
+.button::after {
   position: absolute;
-  border: solid var(--secondary-color);
-  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-  display: inline-block;
-  top: -3px;
-  right: 3px;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.button p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Quizzes List";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+
+.button:hover p::before {
+  width: 100%;
+}
+
+.button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.button svg {
+  color: var(--primary-color);
   transition: 0.2s;
-  padding: 3px;
-  transform: rotate(-45deg);
-}
-
-button:hover {
-  background-color: var(--hover-color);
-}
-
-button:hover .arrow {
-  background: var(--secondary-color);
-}
-
-button:hover .arrow:before {
-  right: 0;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
 }

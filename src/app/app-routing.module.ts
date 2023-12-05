@@ -18,6 +18,7 @@ import { QuestionCreateComponent } from './Pages/Question/question-create/questi
 import { ValidationComponent } from './Pages/Question/validation/validation.component';
 import { TestComponent } from './Pages/Test/test/test.component';
 import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.component';
+import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -48,7 +49,9 @@ const routes: Routes = [
 
   { path: 'test', component: TestComponent, title: 'Test Create' },
 
-  { path: 'quiz', component: QuizCreateComponent, title: 'Quiz Create'}
+  { path: 'quiz', component: QuizCreateComponent, title: 'Quiz Create'},
+  { path: 'quiz-list', component: QuizListComponent, title: 'Quiz List'},
+
 
 
 

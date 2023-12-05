@@ -1,0 +1,47 @@
+
+<app-header>
+
+  <div class="my-4">
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th><span class="las la-sort"></span> score</th>
+                <th><span class="las la-sort"></span> show Answers</th>
+                <th><span class="las la-sort"></span> show Final Results</th>
+                <th><span class="las la-sort"></span> chance Number</th>
+                <th><span class="las la-sort"></span> remark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quiz of this.quizzes; let i = index">
+                <td>#{{i + 1}}</td>
+                <td>
+                    {{ quiz.score }}
+                </td>
+                <td>
+                    {{ quiz.showAnswers }}
+                </td>
+                <td>
+                    {{ quiz.showFinalResults }}
+                </td>
+                <td>
+                    {{ quiz.chanceNum }}
+                </td>
+                <td>
+                    {{ quiz.remark }}
+                </td>
+                <td>
+                    <div class="actions">
+                        <span class="lab la-telegram-plane"></span>
+                        <span class="las la-eye"></span>
+                        <span class="las la-ellipsis-v"></span>
+                    </div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+  </div>
+</app-header>
