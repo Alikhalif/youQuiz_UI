@@ -2,10 +2,25 @@
 <app-header>
 
   <div class="my-4">
+    <div class="d-flex justify-content-between">
+      <div class="my-5">
+        <h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Quiz</h1>
+      </div>
+
+      <div class="my-5">
+        <a class="button" routerLink="/quiz">
+          <p>Add Quiz</p>
+          <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
     <table width="100%">
         <thead>
             <tr>
-                <th>#</th>
+                <th></th>
                 <th><span class="las la-sort"></span> score</th>
                 <th><span class="las la-sort"></span> show Answers</th>
                 <th><span class="las la-sort"></span> show Final Results</th>
@@ -33,9 +48,15 @@
                 </td>
                 <td>
                     <div class="actions">
-                        <span class="lab la-telegram-plane"></span>
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
+                        <a routerLink="">
+                          <span>
+                            <i class="fa-regular fa-pen-to-square"></i>
+                          </span>
+                        </a>
+                        <span (click)="deleteQuiz(quiz.id)">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </span>
+
                     </div>
                 </td>
             </tr>

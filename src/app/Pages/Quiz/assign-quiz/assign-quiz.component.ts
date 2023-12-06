@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { Quiz } from 'src/app/Model/quiz';
 import { QuizResponse, QuizService } from 'src/app/Services/Quiz/quiz.service';
 
 @Component({
-  selector: 'app-quiz-list',
-  templateUrl: './quiz-list.component.html',
-  styleUrls: ['./quiz-list.component.css']
+  selector: 'app-assign-quiz',
+  templateUrl: './assign-quiz.component.html',
+  styleUrls: ['./assign-quiz.component.css']
 })
-export class QuizListComponent {
+export class AssignQuizComponent {
 
   constructor(private quizService: QuizService){}
 
@@ -22,15 +21,5 @@ export class QuizListComponent {
       console.log(res.Quizess);
       this.quizzes = res.Quizess;
     });
-  }
-
-  deleteQuiz(id: number){
-    this.quizService.deleteQuiz(id).subscribe({
-      next:(value)=>{
-        alert("Deleted Successfully");
-        this.getQuizzes();
-      }
-
-    })
   }
 }

@@ -27,6 +27,7 @@ import { ValidationComponent } from './Pages/Question/validation/validation.comp
 import { TestComponent } from './Pages/Test/test/test.component';
 import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.component';
 import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
+import { AssignQuizComponent } from './Pages/Quiz/assign-quiz/assign-quiz.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
     TestComponent,
     QuizCreateComponent,
     QuizListComponent,
+    AssignQuizComponent,
   ],
   imports: [
     BrowserModule,
