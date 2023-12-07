@@ -1,0 +1,151 @@
+table {
+  border-collapse: collapse;
+}
+
+table thead tr {
+  background: #e9edf2;
+}
+
+table thead th {
+  /* padding: 1rem 0rem; */
+  text-align: left;
+  color: #444;
+  font-size: .9rem;
+}
+
+table thead th:first-child {
+  /* padding-left: 1rem; */
+}
+
+table tbody td {
+  padding: 1rem 0rem;
+  color: #444;
+}
+
+table tbody td:first-child {
+  padding-left: 1rem;
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dee2e8;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+}
+
+.client-img {
+  margin-right: .5rem;
+  border: 2px solid #b0b0b0;
+  height: 45px;
+  width: 45px;
+}
+
+.client-info h4 {
+  color: #555;
+  font-size: .95rem;
+}
+
+.client-info small {
+  color: #777;
+}
+
+.actions span {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+.paid {
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  color: var(--main-color);
+  background: #e5f8ed;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  font-size: .8rem;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+/* button */
+
+.button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  --primary-color: #111;
+  --hovered-color: #2196F3;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color)
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.button p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Assign Quiz";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+
+.button:hover p::before {
+  width: 100%;
+}
+
+.button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+table
+{
+  background-color: #e9edf2;
+}

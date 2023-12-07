@@ -28,6 +28,7 @@ import { TestComponent } from './Pages/Test/test/test.component';
 import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.component';
 import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
 import { AssignQuizComponent } from './Pages/Quiz/assign-quiz/assign-quiz.component';
+import { AssignquizListComponent } from './Pages/Quiz/assignquiz-list/assignquiz-list.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { AssignQuizComponent } from './Pages/Quiz/assign-quiz/assign-quiz.compon
     QuizCreateComponent,
     QuizListComponent,
     AssignQuizComponent,
+    AssignquizListComponent,
   ],
   imports: [
     BrowserModule,

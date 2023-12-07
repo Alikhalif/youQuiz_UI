@@ -1,0 +1,68 @@
+
+<app-header>
+
+  <div class="my-4">
+    <div class="d-flex justify-content-between">
+      <div class="my-5">
+        <h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Quiz</h1>
+      </div>
+
+      <div class="my-5">
+        <a class="button" routerLink="/assign-quiz">
+          <p>Assign Quiz</p>
+          <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th><span class="las la-sort"></span> Score</th>
+                <th><span class="las la-sort"></span> Result</th>
+                <th><span class="las la-sort"></span> Reason</th>
+                <th><span class="las la-sort"></span> Start Date</th>
+                <th><span class="las la-sort"></span> End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quiz of this.Assignquizzes; let i = index">
+                <td>#{{i + 1}}</td>
+                <td>
+                    {{ quiz.score }}
+                </td>
+                <td>
+                    {{ quiz.result }}
+                </td>
+                <td>
+                    {{ quiz.reason }}
+                </td>
+                <td>
+                    {{ quiz.debutDate }}
+                </td>
+                <td>
+                    {{ quiz.endDate }}
+                </td>
+                <td>
+                    <div class="actions">
+                        <a routerLink="">
+                          <span>
+                            <i class="fa-regular fa-pen-to-square"></i>
+                          </span>
+                        </a>
+                        <span (click)="deleteQuiz(quiz.id)">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </span>
+
+                    </div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+  </div>
+</app-header>

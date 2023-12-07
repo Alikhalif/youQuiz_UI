@@ -7,7 +7,7 @@
       </div>
 
       <div class="my-5">
-        <a class="button" routerLink="/quiz-list">
+        <a class="button" routerLink="/assign-list">
           <p>Add Quiz</p>
           <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div  class="d-flex flex-wrap m-auto" >
+    <div  class="d-flex flex-wrap m-auto">
       <div *ngFor="let quiz of quizzes let i = index"  class="card m-2">
         <div class="header">
           <span class="price">Quiz {{i + 1}}</span>
@@ -63,12 +63,63 @@
             <span>show Final Results</span>
           </li>
         </ul>
-        <a routerLink="/quiz/{{quiz.id}}" class="action" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Started</a>
+        <button type="button" (click)="getQuizId(quiz, quiz.id)" class="action" data-bs-toggle="modal" data-bs-target="#exampleModal">Assign Quiz</button>
       </div>
 
 
 
     </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- <form (ngSubmit)="saveQuestionToLocal()"> -->
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Assign Quiz</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+              <div class="mb-3">
+                <label for="score" class="form-label">Score</label>
+                <input disabled type="number" [(ngModel)]="myAssignQuiz[0].score" [value]="myQuiz.score" name="score" class="form-control" id="totalScore" placeholder="Enter Total Score">
+              </div>
+
+              <div class="mb-3">
+                <label for="reason" class="form-label">Reason</label>
+                <textarea rows="3" [(ngModel)]="myAssignQuiz[0].reason" name="reason" class="form-control" id="reason" placeholder="Enter Reason"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="debutDate" class="form-label">Start Date</label>
+                <input type="datetime-local" [(ngModel)]="myAssignQuiz[0].debutDate" name="debutDate" class="form-control" id="debutDate" placeholder="Enter Start Date">
+              </div>
+
+              <div class="mb-3">
+                <label for="endDate" class="form-label">End Date</label>
+                <input type="datetime-local" [(ngModel)]="myAssignQuiz[0].endDate" name="endDate" class="form-control" id="endDate" placeholder="Enter End Date">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="student_id" class="form-label">Student</label>
+                <select [(ngModel)]="myAssignQuiz[0].student_id" name="student_id" class="form-control" id="student_id" placeholder="Enter Student">
+                  <option *ngFor="let stud of students" [value]="stud.id">{{stud.firstName}} {{stud.lastName}}</option>
+                </select>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="saveAssignQuiz()"  class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          </div>
+
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
 
   </div>
 </app-header>
