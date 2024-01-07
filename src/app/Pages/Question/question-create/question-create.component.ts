@@ -19,6 +19,7 @@ export class QuestionCreateComponent implements OnInit{
     ){}
 
   myQuestion: Question = {
+    id: 0,
     questionText: ' ',
     type: ' ',
     totalScore: 0,
@@ -70,6 +71,7 @@ export class QuestionCreateComponent implements OnInit{
 
   clearObject(){
     this.myQuestion = {
+      id: 0,
       questionText: '',
       type: '',
       totalScore: 0,

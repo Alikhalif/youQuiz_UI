@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Quiz } from 'src/app/Model/quiz';
 
 export interface QuizResponse{
   id: number,
@@ -21,23 +22,24 @@ export class QuizService {
 
   constructor(private httpClient: HttpClient) { }
 
-  saveQuiz(data: Object){
-    return this.httpClient.post(`http://localhost:8080/api/quiz`,data);
+  saveQuiz(data: Object) : Observable<Quiz>{
+    return this.httpClient.post<Quiz>(`http://localhost:8080/api/quiz`,data);
   }
 
-  getAllQuizzes(){
-    return this.httpClient.get<QuizResponse>('http://localhost:8080/api/quiz/all');
+  getAllQuizzes(): Observable<QuizResponse[]>{
+    return this.httpClient.get<QuizResponse[]>('http://localhost:8080/api/quiz/all');
   }
 
   getOne(quizId: Number){
     return this.httpClient.get(`http://localhost:8080/api/quiz/${quizId}`);
   }
 
-  updateQuiz(data: Object, quizId: number){
-    return this.httpClient.put(`http://localhost:8080/api/quiz/${quizId}`,data);
+  updateQuiz(data: Object, quizId: number): Observable<Quiz>{
+    return this.httpClient.put<Quiz>(`http://localhost:8080/api/quiz/${quizId}`,data);
   }
 
-  deleteQuiz(quizId:Number){
-    return this.httpClient.delete(`http://localhost:8080/api/quiz/${quizId}`);
+  deleteQuiz(quizId:Number | undefined): Observable<{ message: string; deletedElementIdentifier: number }>{
+    return this.httpClient
+    .delete<{ message: string; deletedElementIdentifier: number }>(`http://localhost:8080/api/quiz/${quizId}`);
   }
 }

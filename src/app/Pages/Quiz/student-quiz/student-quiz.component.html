@@ -1,0 +1,43 @@
+<app-header>
+  <div class="container mt-3">
+    <div class="input-group">
+      <input type="number" class="form-control" placeholder="Search..." [(ngModel)]="searchTerm">
+      <button class="btn btn-outline-secondary" type="button" (click)="search()">
+        <i class="bi bi-search"></i> Search
+      </button>
+    </div>
+  </div>
+
+
+  <div>
+    <div *ngFor="let quiz of quizzes let i = index"  class="card m-2">
+      <div class="header">
+        <span class="price">Quiz {{i + 1}}</span>
+        <span class="title">{{quiz.debutDate}}</span>
+      </div>
+      <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
+      <ul class="lists">
+        <li class="list">
+          <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+          </svg>
+          <span>Score : {{quiz.score}} </span>
+        </li>
+        <li class="list">
+          <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+          </svg>
+          <span>Chance Number : {{quiz.quiz_id}} </span>
+        </li>
+
+
+
+
+      </ul>
+        <a routerLink="/start/{{quiz.quiz_id}}/{{searchTerm}}/{{quiz.id}}"  class="action" data-bs-toggle="modal" data-bs-target="#exampleModal">Start Quiz</a>
+
+    </div>
+  </div>
+
+
+</app-header>

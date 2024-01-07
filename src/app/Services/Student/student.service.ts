@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Student } from 'src/app/Model/student';
 
 export interface StudentResponse{
   id: number
@@ -28,24 +30,28 @@ export class StudentService {
 
   constructor(private httpClient:HttpClient) { }
 
-  saveStudent(inputData: Object){
-    return this.httpClient.post(`http://localhost:8080/api/student`,inputData);
+  saveStudent(inputData: Object) : Observable<Student>{
+    return this.httpClient.post<Student>(`http://localhost:8080/api/student`,inputData);
   }
 
-  getAllStudent(){
-    return this.httpClient.get('http://localhost:8080/api/student');
+  getAllStudent(): Observable<Student[]>{
+    return this.httpClient.
+            get<Student[]>('http://localhost:8080/api/student');
   }
 
   getOne(studentId: Number){
     return this.httpClient.get(`http://localhost:8080/api/student/${studentId}`);
   }
 
-  updateStudent(inputData: Object, studentId: number){
-    return this.httpClient.put(`http://localhost:8080/api/student/${studentId}`,inputData);
+  updateStudent(inputData: Object, studentId: number) : Observable<Student>{
+    return this.httpClient.put<Student>(`http://localhost:8080/api/student/${studentId}`,inputData);
   }
 
-  deleteStudent(studentId:Number){
-    return this.httpClient.delete(`http://localhost:8080/api/student/${studentId}`);
+  deleteStudent(
+    studentId:Number | undefined
+    ): Observable<{ message: string; deletedElementIdentifier: number }> {
+    return this.httpClient
+    .delete<{ message: string; deletedElementIdentifier: number }>(`http://localhost:8080/api/student/${studentId}`);
   }
 
 }

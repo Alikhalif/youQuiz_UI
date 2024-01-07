@@ -63,7 +63,11 @@
             <span>show Final Results</span>
           </li>
         </ul>
-        <button type="button" (click)="getQuizId(quiz, quiz.id)" class="action" data-bs-toggle="modal" data-bs-target="#exampleModal">Assign Quiz</button>
+        <div class="d-flex justify-content-between">
+          <button type="button" (click)="getQuizId(quiz, quiz.id)" class="action" data-bs-toggle="modal" data-bs-target="#exampleModal">Assign Quiz</button>
+          <button type="button" (click)="getQuizId(quiz, quiz.id)" class="action" data-bs-toggle="modal" data-bs-target="#exampleModal2">Questions</button>
+        </div>
+
       </div>
 
 
@@ -120,6 +124,40 @@
       </div>
     </div>
   </div>
+
+
+
+  <!-- Modal Quiestion -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Assign Questions to Quiz</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div *ngFor="let question of questions; let i = index" class="d-flex align-items-center justify-content-between mb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" [value]="question.id" (change)="toggleSelection(i)">
+              <label class="form-check-label">{{ question.questionText }}</label>
+            </div>
+
+            <div class="form-group mb-0">
+              <label for="score" class="form-label">Number of seconds</label>
+              <input type="number"  [disabled]="!isCheckboxChecked(i)" name="time" class="form-control" id="time" placeholder="Enter number of seconds">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="saveQuestionAffecte()" class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   </div>
 </app-header>

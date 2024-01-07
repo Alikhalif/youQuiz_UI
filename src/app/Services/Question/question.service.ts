@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Question } from 'src/app/Model/question';
+import { ValidationResponse } from 'src/app/Model/validationResponse';
 
 export interface QuestionResponse{
   id: number
@@ -29,23 +32,28 @@ export class QuestionService {
 
   constructor( private httpClient:HttpClient) { }
 
-  saveQuestion(inputData: Object){
-    return this.httpClient.post(`http://localhost:8080/api/question`,inputData);
+  saveQuestion(inputData: Object): Observable<Question>{
+    return this.httpClient.post<Question>(`http://localhost:8080/api/question`,inputData);
   }
 
-  getQuestion(){
-    return this.httpClient.get(`http://localhost:8080/api/question/all`);
+  getQuestion() : Observable<QuestionResponse[]>{
+    return this.httpClient.get<QuestionResponse[]>(`http://localhost:8080/api/question/all`);
   }
 
   getOne(questionId: number){
     return this.httpClient.get(`http://localhost:8080/api/question/${questionId}`);
   }
 
-  updateQuestion(inputData: Object, questionId: number){
-    return this.httpClient.put(`http://localhost:8080/api/question/${questionId}`,inputData);
+  updateQuestion(inputData: Object, questionId: number): Observable<Question>{
+    return this.httpClient.put<Question>(`http://localhost:8080/api/question/${questionId}`,inputData);
   }
 
-  deleteQuestion(questionId:Number){
-    return this.httpClient.delete(`http://localhost:8080/api/question/${questionId}`);
+  deleteQuestion(questionId:Number | undefined): Observable<{ message: string; deletedElementIdentifier: number }>{
+    return this.httpClient
+        .delete<{ message: string; deletedElementIdentifier: number }>(`http://localhost:8080/api/question/${questionId}`);
+  }
+
+  getValidation(questionId:number): Observable<ValidationResponse[]>{
+    return this.httpClient.get<ValidationResponse[]>(`http://localhost:8080/api/question/answar/${questionId}`);
   }
 }

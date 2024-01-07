@@ -1,4 +1,5 @@
 export interface Question {
+  id: number;
   questionText: string;
   type: string;
   totalScore: number;

@@ -31,6 +31,7 @@ export class ValidationComponent {
   // mediaType: string = '';
 
   myAnswar: Answar = {
+    id:0,
     answareText: '',
     points: 0,
     checkAnswar: false,
@@ -40,6 +41,7 @@ export class ValidationComponent {
   answar: Answar[] = []
 
   myQuestion: Question = {
+    id: 0,
     questionText: ' ',
     type: ' ',
     totalScore: 0,
@@ -136,7 +138,7 @@ export class ValidationComponent {
                   }
                 })
               }
-              
+
 
           },
 

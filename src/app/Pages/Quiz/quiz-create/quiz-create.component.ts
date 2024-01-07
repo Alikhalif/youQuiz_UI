@@ -17,6 +17,7 @@ export class QuizCreateComponent implements OnInit{
   errors!:any [];
 
   myQuiz: Quiz = {
+    id:0,
     score: 0,
     showAnswers: false,
     showFinalResults: false,
@@ -75,6 +76,7 @@ export class QuizCreateComponent implements OnInit{
 
   clearObject(){
     this.myQuiz = {
+      id:0,
       score: 0,
       showAnswers: false,
       showFinalResults: false,

@@ -1,4 +1,5 @@
 export interface Quiz {
+  id: number,
   score: number,
   showAnswers: boolean,
   showFinalResults: boolean,

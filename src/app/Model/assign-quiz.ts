@@ -1,4 +1,5 @@
 export interface AssignQuiz {
+    id: number;
     score: number;
     result: number;
     reason: string;

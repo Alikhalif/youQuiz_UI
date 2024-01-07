@@ -21,6 +21,9 @@ import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.compon
 import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
 import { AssignQuizComponent } from './Pages/Quiz/assign-quiz/assign-quiz.component';
 import { AssignquizListComponent } from './Pages/Quiz/assignquiz-list/assignquiz-list.component';
+import { ChatComponent } from './Pages/chat/chat.component';
+import { StartQuizComponent } from './Pages/Quiz/start-quiz/start-quiz.component';
+import { StudentQuizComponent } from './Pages/Quiz/student-quiz/student-quiz.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, title: 'Home Page' },
@@ -56,6 +59,10 @@ const routes: Routes = [
 
   { path: 'assign-quiz', component: AssignQuizComponent, title: 'Assign Quiz'},
   { path: 'assign-list', component: AssignquizListComponent, title: 'Assign Quiz List'},
+  { path: 'student-quiz', component: StudentQuizComponent, title: 'Student Quiz'},
+  { path: 'start/:idQ/:idS/:idAQ', component: StartQuizComponent, title: 'Start Quiz'},
+
+  { path: 'chat', component: ChatComponent, title: 'Chat' }
 
 
 

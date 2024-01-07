@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
@@ -29,6 +29,14 @@ import { QuizCreateComponent } from './Pages/Quiz/quiz-create/quiz-create.compon
 import { QuizListComponent } from './Pages/Quiz/quiz-list/quiz-list.component';
 import { AssignQuizComponent } from './Pages/Quiz/assign-quiz/assign-quiz.component';
 import { AssignquizListComponent } from './Pages/Quiz/assignquiz-list/assignquiz-list.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ChatComponent } from './Pages/chat/chat.component';
+import { StartQuizComponent } from './Pages/Quiz/start-quiz/start-quiz.component';
+import { StudentQuizComponent } from './Pages/Quiz/student-quiz/student-quiz.component';
+import { DirectiveDirective } from './Directive/directive.directive';
 
 
 @NgModule({
@@ -57,6 +65,12 @@ import { AssignquizListComponent } from './Pages/Quiz/assignquiz-list/assignquiz
     QuizListComponent,
     AssignQuizComponent,
     AssignquizListComponent,
+    ChatComponent,
+    StartQuizComponent,
+    StudentQuizComponent,
+    DirectiveDirective,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -64,7 +78,12 @@ import { AssignquizListComponent } from './Pages/Quiz/assignquiz-list/assignquiz
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]

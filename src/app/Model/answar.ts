@@ -1,4 +1,5 @@
 export interface Answar {
+  id: number,
   answareText: string,
   points: number,
   checkAnswar: boolean,

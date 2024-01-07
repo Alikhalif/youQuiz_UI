@@ -150,3 +150,7 @@ a{
   letter-spacing: 0.05em;
   color: rgba(17, 24, 39, 1);
 }
+
+.modal{
+  z-index: 3000;
+}

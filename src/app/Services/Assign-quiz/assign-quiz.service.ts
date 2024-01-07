@@ -40,4 +40,8 @@ export class AssignQuizService {
     return this.httpClient.delete(`http://localhost:8080/api/assign_quiz/${assignId}`);
   }
 
+  getQuizOfStudent(id:number){
+    return this.httpClient.get(`http://localhost:8080/api/assign_quiz/student/${id}`);
+  }
+
 }
